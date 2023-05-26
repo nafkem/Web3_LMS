@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.12;
+pragma solidity ^0.8.17;
 import "./Managed.sol";
 import "./Certification.sol";
 
@@ -94,12 +94,12 @@ contract CourseModule is Managed {
     function purchaseModule() public payable paymentCompliance(courseFee) {
         require(
             isSubscriber[msg.sender] = false,
-            "You have already purchased this module"
+            "You have purchased this module"
         );
         (bool success, ) = instructorsAddress.call{value: msg.value}("");
         require(success, "Purchase Failed");
         subscribers.push(msg.sender);
-        isSubscriber[msg.sender] = true;
+        isSubscriber[msg.sender] = false;
         purchaseCount++;
     }
 

@@ -1,5 +1,5 @@
-//SPDX-License-Identifier: MIT
-pragma solidity ^0.8.12;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.17;
 
 import "./Registration.sol";
 import "./CourseModule.sol";
@@ -41,7 +41,6 @@ contract Web3Edu is Registration {
 * @param _courseFee The Fee for the course
 * @param _certificateURI A URI link to the certificate image and attributes
 * @param _courseDuration The estimated length of the course e.g 48 hours
-
 */
     function createNewModule(
         string memory _courseName,
@@ -85,7 +84,7 @@ contract Web3Edu is Registration {
         newCourseModule.issueCertificate(to);
     }
 
-  /*  function claimCertificate(uint256 _moduleIndex) external {
+    function claimCertificate(uint256 _moduleIndex) external {
         CourseModule newCourseModule = courseModules[_moduleIndex];
         newCourseModule.claimCertificate();
 
@@ -98,5 +97,5 @@ contract Web3Edu is Registration {
         numberOfModulesPurchased++;
 
         emit modulePurchase(msg.sender, newCourseModule.courseFee());
-    }*/
+    }
 }

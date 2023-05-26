@@ -70,9 +70,10 @@ contract Certification is ERC721, ERC721URIStorage, Managed {
         return newItemId;
     }
 
-    function revoke(uint256 tokenId) external onlyOwner(Owner) {
+    function revoke(uint256 tokenId) public onlyOwner(Owner) {
         _burn(tokenId);
     }
+    
 
     /**
      * @notice CONTRACT OVERRIDES
